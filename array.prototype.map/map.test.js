@@ -55,7 +55,7 @@ describe('Array.prototype.arrayMap', () => {
 		expect(callback).toHaveBeenCalledWith(4, 3, arr);
 	});
 
-	it('should throw if first argument is not a function', () => {
+	it('should throw error if first argument is not a function', () => {
 		const arr = [1, 2, 3];
 		expect(() => arr.arrayMap('not a function')).toThrow(TypeError);
 	});

@@ -6,6 +6,20 @@
 	 */
 
 	Array.prototype.arrayMap = function (callback, thisObj) {
-		console.log('hello');
+		if (typeof callback !== 'function') {
+			throw new TypeError('The first argument is not a function');
+		}
+
+		// initialize an array with the mapped results
+		const results = [];
+
+		// implement the loop
+		this.forEach((...args) => {
+			const index = args[1];
+
+			results[index] = callback.apply(thisObj, args);
+		});
+
+		return results;
 	};
 })();
